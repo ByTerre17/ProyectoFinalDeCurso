@@ -1,0 +1,28 @@
+<div class="caja">
+    <div class="capa_mensaje">
+        <h2>{{juego.nombre}}</h2>
+        Fecha de creacion: {{juego.fechaDeLanzamiento}}<br>
+        Creador: {{juego.creador}}<br>
+        Genero: {{juego.genero}}<br>
+        Nota: {{juego.nota}}<br>
+        Resumen: {{juego.resumen}}<br>
+    </div>
+    <div class="cajaDeComentarios">
+        <div class="capa_respuesta" *ngFor="let comentario of comentarios">
+            <h4>Respuesta</h4>
+            {{comentario.id}}<br>
+            {{comentario.titulo}}<br>
+            {{comentario.texto}}<br>
+            {{comentario.nota}}<br>
+            <button (click)="eliminarComentario(comentario.id)" *ngIf="comprobarUsuario(comentario.idUsuario)" >Eliminar</button>
+        </div>
+    </div>
+    <div class="insertarComentario" *ngIf="logueado()">
+        <form [formGroup]='formComentario' (submit)='escribirComentario()'>
+            <input type="text" formControlName='titulo' placeholder='escribe tu titulo'>
+            <input type="text" formControlName='texto' placeholder='escribe tu texto'>
+            <input type="text" formControlName='nota' placeholder='escribe tu nota'>
+            <button type='submit' (click)="formComentario.patchValue({idUsuario:usuario.id});formComentario.patchValue({idJuego:juego.id})" [disabled]='!formComentario.valid'>Enviar comentario</button>
+        </form>
+    </div>
+</div>
