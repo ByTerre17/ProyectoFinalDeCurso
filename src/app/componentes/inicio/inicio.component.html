@@ -8,83 +8,21 @@
           <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
         </p>
       </div>
-    
+    <h2 class="subtitulo">Ultimos lanzamientos.</h2>
     <div class="cajaFuncion1">
         <div class="card-group">
-          <div class="card" *ngFor="let juego of juegos" (click)="verJuego(juego.id)">
-            <img class="card-img-top" src="https://www.google.es/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Card image cap">
+          <div class="card" *ngFor="let juego of juegos" (click)="verJuego(juego.id)"  (mouseenter)="mostrarBoton()">
+            <div class="card-img-top" ><div class="nota">{{juego.nota}}</div></div>
               <div class="card-body">
-                <h5 class="card-title"  >{{juego.nombre}}</h5>
+                <h3 class="card-title"> <div class="NombreNota"><div class="nombre">{{juego.nombre}}</div></div></h3>
                 <p class="card-text">{{juego.resumen}}</p>
+                <div class="eventoPasarElRaton" id="boton" ><button type="button" class="btn btn-primary">Haz click</button></div>
               </div>
               <div class="card-footer">
                 <small class="text-muted">{{juego.fechaDePublicacion}}</small>
               </div>
           </div>  
-            <div class="card">
-              <img class="card-img-top" src="https://www.google.es/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </div>
-            </div>
-            <div class="card">
-              <img class="card-img-top" src="https://www.google.es/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="https://www.google.es/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-              </div>
-          </div> 
-    </div>
-    <div class="cajaFuncion2">
-        Mejores notas juegos
-        <table class="table table-striped table-dark">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
+        </div> 
     </div>
     <div class="cajaFuncion"></div>
 </div>

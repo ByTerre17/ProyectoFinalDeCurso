@@ -6,6 +6,7 @@ describe('VerJuegoComponent', () => {
   let component: VerJuegoComponent;
   let fixture: ComponentFixture<VerJuegoComponent>;
 
+  
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ VerJuegoComponent ]

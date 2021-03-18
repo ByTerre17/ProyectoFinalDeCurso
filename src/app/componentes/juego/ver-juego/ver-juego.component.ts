@@ -2,7 +2,6 @@ import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Juego } from 'src/app/clases/juego';
 import { ComentariosService } from 'src/app/servicios/comentarios.service';
 import { JuegosService } from 'src/app/servicios/juegos.service';
 import { UsuariosService } from 'src/app/servicios/usuarios.service';
@@ -35,9 +34,8 @@ export class VerJuegoComponent implements OnInit {
     this.obtenerJuego()
     this.obtenerJuegos()
     this.urlActiva = document.location.href
-    this.obtenerComentarios()
+    this.obtenerComentariosPorJuego(this.idJuego)
     this.cargarPerfil()
-    console.log(this.logueado)
   }
   obtenerJuego(): void{
     this.servicioJuegos.verJuego(this.idJuego).subscribe(
@@ -74,6 +72,16 @@ export class VerJuegoComponent implements OnInit {
 
   obtenerComentarios(): void{
     this.servicioComentarios.listarComentarios().subscribe(
+      respuesta =>{
+        this.comentarios=respuesta
+        console.log(this.comentarios)
+      },
+      error => {console.log(error)}
+    )
+  }
+
+  obtenerComentariosPorJuego(idJuego: any): void{
+    this.servicioComentarios.listarComentariosPorJuego(idJuego).subscribe(
       respuesta =>{
         this.comentarios=respuesta
         console.log(this.comentarios)

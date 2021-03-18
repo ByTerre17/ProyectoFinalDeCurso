@@ -21,4 +21,8 @@ export class ComentariosService {
   listarComentarios(): Observable<any>{
     return this.http.get(url+'list/')
   }
+
+  listarComentariosPorJuego(idJuego: any): Observable<any>{
+    return this.http.get(url+'listPorJuego/'+idJuego)
+  }
 }

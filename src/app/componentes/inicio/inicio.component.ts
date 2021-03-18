@@ -12,6 +12,7 @@ import { UsuariosService } from 'src/app/servicios/usuarios.service';
 export class InicioComponent implements OnInit {
   public juegos: any[] = []
   logueado:any
+  boton:any
   constructor(private fb:FormBuilder,private servicioJuegos:JuegosService,private servicioUsuarios:UsuariosService, private irHacia:Router) { }
 
   ngOnInit(): void {
@@ -33,5 +34,7 @@ export class InicioComponent implements OnInit {
 
   verJuego(id:number): void{
     this.irHacia.navigate(["/verJuego/"+id])
+  }
+  mostrarBoton():void{
   }
 }
