@@ -1,18 +1,14 @@
 <div class="caja">
     <div class="jumbotron">
-        <h1 class="display-4">Hello, world!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <p class="lead">
-          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-        </p>
+        <h1 class="display-4">Bienvenido a criticame</h1>
+        
+        <br>
       </div>
     <h2 class="subtitulo">Ultimos lanzamientos.</h2>
     <div class="cajaFuncion1">
         <div class="card-group">
           <div class="card" *ngFor="let juego of juegos" (click)="verJuego(juego.id)"  (mouseenter)="mostrarBoton()">
-            <div class="card-img-top" ><div class="nota">{{juego.nota}}</div></div>
+            <div class="card-img-top" style="background-image: url(./assets/{{juego.imagen}}.jpg)" ><div class="nota">{{juego.nota}}</div></div>
               <div class="card-body">
                 <h3 class="card-title"> <div class="NombreNota"><div class="nombre">{{juego.nombre}}</div></div></h3>
                 <p class="card-text">{{juego.resumen}}</p>

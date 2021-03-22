@@ -15,6 +15,6 @@ export class BarraNavegacionComponent implements OnInit {
   }
   doLogout(): void{
     this.servicioUsuarios.logOut()
-    window.location.reload();
+    this.irHacia.navigate([''])
   }
 }

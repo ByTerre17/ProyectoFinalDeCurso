@@ -34,7 +34,10 @@ export class UsuariosService {
   eliminarUsuario(): Observable<any>{
     return this.http.delete(url)
   }
-  
+  editarPassword(usuario:Usuario): Observable<any>{
+    return this.http.put(url, usuario)
+  }
+
   listarUsuarios(): Observable<any>{
     return this.http.get(url+'list/')
   }
